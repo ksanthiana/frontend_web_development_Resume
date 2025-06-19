@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santhiana | Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="nav">
+    <div class="logo">Santhiana</div>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+    <button id="themeToggle" title="Toggle dark mode">í¼™</button>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I am a dedicated full-stack developer and aspiring leader committed to rebuilding Burundi through innovation and youth empowerment.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JS</li>
+        <li>Responsive Design</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experiences</h2>
+      <div class="card">
+        <h3>Front-End Intern â€¢ ALU Sandbox</h3>
+        <span>Feb 2025 â€“ Present</span>
+        <p>
+          Contributed to the development of a peer-driven learning platform using HTML, CSS, and JavaScript.
+          Collaborated with a team to build responsive components and implement form validation features.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Freelance Web Developer</h3>
+        <span>2024 - Present</span>
+        <p>
+          Designed and deployed personal and client portfolios using pure HTML, CSS, and JavaScript.
+          Focused on clean code, accessibility, and performance across all screen sizes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Tech Community Volunteer â€¢ ALU Dev Club</h3>
+        <span>2024 - 2025</span>
+        <p>
+          Mentored peers in front-end web technologies, hosted code clinics, and co-organized hackathons.
+        </p>
+      </div>
+    </section>
+    <a class="btn" id="viewResumeBtn" href="index.html">Close</a>
+  </main>
+  <footer>&copy; 2025 Santhiana. All rights reserved.</footer>
+</body>
+</html>
