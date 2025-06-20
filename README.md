@@ -1,2 +1,0 @@
-# frontend_web_development_Resume
-For assignment

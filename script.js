@@ -35,7 +35,7 @@ document.getElementById('contactForm').onsubmit = e => {
 // Fetch and display GitHub repositories
 const githubProjects = document.getElementById('github-projects');
 if (githubProjects) {
-  fetch('https://github.com/ksanthiana')
+  fetch('https://api.github.com/users/ksanthiana/repos?sort=updated')
     .then(response => response.json())
     .then(repos => {
       githubProjects.innerHTML = '';
@@ -58,18 +58,36 @@ if (githubProjects) {
     });
 }
 
-// theme toggle
+// Contact Form Validation (simple)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.onsubmit = e => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const feedback = document.getElementById('formFeedback');
+    if (!email || !message) {
+      feedback.textContent = "Please fill in all fields.";
+      feedback.style.color = "red";
+      return;
+    }
+    feedback.textContent = "Thank you for your message!";
+    feedback.style.color = "green";
+    contactForm.reset();
+  };
+}
+
+// Dark Mode Toggle
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
   themeToggle.onclick = () => {
     document.body.classList.toggle('dark-mode');
-    // Optionally save preference
     if (document.body.classList.contains('dark-mode')) {
       localStorage.setItem('theme', 'dark');
       themeToggle.textContent = '‚òÄÔ∏è';
     } else {
       localStorage.setItem('theme', 'light');
-      themeToggle.textContent = 'Ìºô';
+      themeToggle.textContent = 'üåô';
     }
   };
   // On load, set theme from localStorage
@@ -78,4 +96,3 @@ if (themeToggle) {
     themeToggle.textContent = '‚òÄÔ∏è';
   }
 }
-
