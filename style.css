@@ -3,72 +3,116 @@
 }
 * { box-sizing: border-box; margin:0; padding:0; }
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f2f5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: url('profile.jpg') center/cover no-repeat;
   color: #222;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
 }
-main {
-  max-width: 420px;
-  margin: 40px auto 0 auto;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 32px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-section {
-  width: 100%;
-  margin-bottom: 32px;
-  padding: 0 0 16px 0;
-  border-bottom: 1px solid #eee;
-}
-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-header {
-  max-width: 420px;
-  margin: 0 auto;
-  border-radius: 0 0 18px 18px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+.main-header {
+  max-width: 500px;
+  margin: 32px auto 0 auto;
+  background: #f1eeee;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
+  padding: 18px 32px;
+  position: relative;
 }
-.logo {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: var(--accent);
-}
-nav {
+
+.main-header nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
-footer {
-  max-width: 420px;
-  margin: 24px auto 0 auto;
-  text-align: center;
-  color: #888;
-  font-size: 0.95rem;
-  background: transparent;
-  box-shadow: none;
+
+.main-header a {
+  color: #09101178;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  transition: color 0.2s;
 }
+.main-header a:hover {
+  color: #1d1f20;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+#themeToggle:hover {
+  color: #007bff;
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto 32px auto;
+  background: #ffffff9d;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .profile-pic {
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 95px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
 }
+
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  border-radius: 18px 18px 0 0;
+  padding: 48px 24px 32px 24px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffffff9d;
+  z-index: 2;
+}
+
+#hero > * {
+  position: relative;
+  z-index: 3;
+}
+
+#hero h1 {
+  font-size: 2rem;
+  text-align: left;
+  margin: 0.5rem 0 0.2rem 0;
+  font-weight: bold;
+}
+#hero p {
+  color: #444;
+  text-align: left;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
 .btn {
   background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
   color: #fff;
@@ -79,37 +123,67 @@ footer {
   font-weight: 500;
   transition: background 0.2s, transform 0.2s;
   box-shadow: 0 2px 8px rgba(0,123,255,0.08);
-  margin-top: 12px;
+  margin-top: 0.5px;
+  display: inline-block;
+  margin-left: 0;
 }
 .btn:hover {
   background: linear-gradient(90deg, #0056b3 60%, #0096c7 100%);
   transform: translateY(-2px) scale(1.04);
 }
-.project-btn {
-  display: inline-block;
-  margin-top: 8px;
-  background: linear-gradient(90deg, #24292e 60%, #586069 100%);
-  color: #fff;
-  padding: 0.4rem 1.1rem;
+.github-btn {
+  margin-bottom: 1px;
+  margin-left: 0;
+}
+
+hr {
   border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.98rem;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 1px 4px rgba(36,41,46,0.08);
+  border-top: 1px solid #eee;
+  margin: 30px 0 24px 0;
+  width: 100%;
 }
-.project-btn:hover {
-  background: linear-gradient(90deg, #0366d6 60%, #2188ff 100%);
-  transform: translateY(-2px) scale(1.04);
+
+
+#projects, #contact {
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
 }
+
+#projects h2, #contact h2 {
+  text-align: left;
+  margin-left: 0;
+}
+
+#github-projects,
+#contactForm {
+  margin-left: 0;
+}
+
+/* If you have .btn centered, override for these buttons: */
+#projects .btn,
+#contact .btn {
+  display: inline-block;
+  margin-left: 0;
+}
+
+#github-projects {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
 .repo-card {
   background: #f8fafc;
   border-radius: 10px;
   padding: 14px;
-  margin-bottom: 14px;
+  min-width: 180px;
+  flex: 1 1 180px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   transition: box-shadow 0.2s;
+  margin-bottom: 8px;
 }
 .repo-card:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
@@ -118,72 +192,110 @@ footer {
   margin: 0 0 6px 0;
   font-size: 1.05rem;
 }
-.repo-card a {
-  color: #007bff;
+.repo-card a.project-btn {
+  margin-top: 8px;
+  background: #24292e;
+  color: #fff;
+  padding: 0.3rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
+  font-size: 0.97rem;
+  display: inline-block;
 }
-.repo-card a:hover {
-  text-decoration: underline;
+.repo-card a.project-btn:hover {
+  background: #0366d6;
 }
-.skill-list {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  list-style:none;
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  align-items: flex-start;
+  text-align: left;
+  align-items: flex-start;
+  text-align: left;
 }
-.skill-list li {
-  background:var(--accent);
-  color:#fff;
-  padding:6px 12px;
-  border-radius:20px;
+
+#contactForm label {
+  display: block;
+  margin-left: 0;
+  text-align: left;
 }
-.card {
-  background: #f8fafc;
-  border-radius: 10px;
-  padding: 14px;
-  margin-bottom: 14px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+
+#contactForm input,
+#contactForm textarea {
+  display: block;
+  margin-left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+  background: #f9f9f9;
 }
-#themeToggle {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  margin-left: 8px;
-  transition: color 0.2s;
+#contactForm textarea {
+  min-height: 80px;
+  max-height: 195px;
 }
-#themeToggle:hover {
-  color: var(--accent);
+#contactForm button {
+  margin-left: 0;
+  display: inline-block;
 }
+#formFeedback {
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
 /* Dark mode styles */
 body.dark-mode {
   background: #181a1b;
   color: #f1f1f1;
 }
-body.dark-mode main,
-body.dark-mode header {
+body.dark-mode .main-header,
+body.dark-mode main {
   background: #23272a;
   color: #f1f1f1;
   box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
-body.dark-mode .card,
+body.dark-mode .btn,
+body.dark-mode .github-btn,
+body.dark-mode .repo-card a.project-btn {
+  background: linear-gradient(90deg, #444 60%, #222 100%);
+  color: #fff;
+}
+body.dark-mode .btn:hover,
+body.dark-mode .github-btn:hover,
+body.dark-mode .repo-card a.project-btn:hover {
+  background: linear-gradient(90deg, #0366d6 60%, #2188ff 100%);
+}
 body.dark-mode .repo-card {
   background: #23272a;
   color: #f1f1f1;
   box-shadow: 0 1px 8px rgba(0,0,0,0.18);
 }
-body.dark-mode .btn,
-body.dark-mode .project-btn {
-  background: linear-gradient(90deg, #444 60%, #222 100%);
-  color: #fff;
+body.dark-mode #contactForm input,
+body.dark-mode #contactForm textarea {
+  background: #23272a;
+  color: #f1f1f1;
+  border: 1px solid #444;
 }
-body.dark-mode .btn:hover,
-body.dark-mode .project-btn:hover {
-  background: linear-gradient(90deg, #0366d6 60%, #2188ff 100%);
+body.dark-mode #contactForm label {
+  color: #f1f1f1;
 }
+body.dark-mode #formFeedback {
+  color: #f1f1f1;
+}
+
 /* Responsive for mobile */
-@media (max-width: 500px) {
-  main, header, footer {
+@media (max-width: 600px) {
+  .main-header, main {
     max-width: 98vw;
     padding: 10px;
     border-radius: 0;

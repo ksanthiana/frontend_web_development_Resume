@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header id="nav">
-    <div class="logo">Santhiana</div>
+  <header class="main-header">
+    <img src="profile.jpg" alt="Santhiana's photo" class="profile-pic" />
+    <div class="logo"><span style="color:#97dff0;font-weight:bold;">My Portfolio</span></div>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -18,25 +19,29 @@
 
   <main>
     <section id="hero">
-      <img src="profile.jpg" alt="Santhiana's photo" class="profile-pic" />
-      <h1>Hello, I'm Santhiana</h1>
-      <p>Front-End Developer passionate about clean code & UX.</p>
+      
+      <h1>Hello, I'm <span style="color:#21262c;">Santhiana</span></h1>
+      <p>Front-End Developer passionate about clean code &amp; UX.</p>
       <a class="btn" id="viewResumeBtn" href="resume.html">View My Resume</a>
+      <hr />
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
+      <a href="https://github.com/ksanthiana" target="_blank" class="btn github-btn">See all on GitHub</a>
       <div id="github-projects">
-        <p>Loading repositories...</p>
       </div>
+      <hr />
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <form id="contactForm">
+        <label for="email">Email</label>
         <input type="email" id="email" placeholder="Your email" required>
+        <label for="message">Message</label>
         <textarea id="message" placeholder="Your message" required></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn">Send Message</button>
       </form>
       <p id="formFeedback"></p>
     </section>
@@ -45,5 +50,4 @@
   <footer>&copy; 2025 Santhiana. All rights reserved.</footer>
   <script src="script.js"></script>
 </body>
-
 </html>
