@@ -78,21 +78,28 @@ if (contactForm) {
 }
 
 // Dark Mode Toggle
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-  themeToggle.onclick = () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
+document.addEventListener("DOMContentLoaded", function() {
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    // Set initial state from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
       themeToggle.textContent = '☀️';
     } else {
-      localStorage.setItem('theme', 'light');
       themeToggle.textContent = '🌙';
     }
-  };
-  // On load, set theme from localStorage
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeToggle.textContent = '☀️';
+
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙';
+      }
+    };
   }
-}
+});
+
+
